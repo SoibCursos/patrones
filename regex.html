@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones regulares</title>
+    <link rel="stylesheet" href="./css/">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Validascion html con el atributo pattern</h1>
+    <form action="" method="get">
+        <label for="nombre">nombre</label>
+        <input type="text" name="nombre" id="nombre" required title="El nombre solo puede contener letras y espacios, max 10 caracteres y minimo 2 caracteres" pattern="^[a-zA-ZÀ-ÿ\s]+$" maxlength="10" minlength="2">
+        <br><br>
+
+        <!--Teléfono que el 
+        código de país +34 sea opcional
+        seguido de 9 digitos-->
+        <label for="telefono">Número de teléfono:</label>
+        <input type="text" id="telefono" name="telefono" 
+         pattern="^(\+\d{1,3}\s?)?(\d{9})$" 
+         title="El número de teléfono debe ser opcionalmente precedido por un código de país seguido de 9 dígitos." 
+         required>
+
+         <!--contraseña de mínimo 8 caracters , una mayúscula, un número , y un caráter especial
+         -->
+         <label for="password">Contraseña</label>
+        <input type="password" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s]).{8,}$" title="poner un password con mínimo 8 caracters , una mayúscula, un número , y un caráter especial"> 
+
+        <input type="submit">
+    </form>
+</body>
+</html>
